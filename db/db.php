@@ -1,10 +1,8 @@
 <?php
-
-
     $db_server = "localhost";
     $db_database = "project";
     $db_username = "root";
-    $db_password = "root";
+    $db_password = "";
     try{
     $db = new PDO("mysql:host=$db_server;dbname=$db_database;charset=utf8"
     ,
@@ -14,6 +12,4 @@
     catch(PDOException $e){
     echo $e-> getMessage();
     }
-
-
 ?>

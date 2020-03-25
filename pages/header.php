@@ -9,5 +9,5 @@
 <body>
     <header class="header">
         <h1 class="header__logo">Blog</h1>
-        <a href="http://" class="header__admin-link"><p class="header__admin-text">Admin</p></a>
+        <a href="./pages/admin.php" class="header__admin-link"><p class="header__admin-text">Admin</p></a>
     </header>
