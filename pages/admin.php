@@ -1,5 +1,5 @@
 <?php
-
+    require_once './header.php';
 ?>
 <div class="order-category">
     <div>Ordernr</div>
@@ -9,7 +9,6 @@
     <div>Pris</div>
 </div>
 <?php
-    require_once './db/db.php';
 
 $sql = "SELECT * FROM proj_posts";
 

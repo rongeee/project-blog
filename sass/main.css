@@ -75,7 +75,6 @@
 .blog-entry__image {
   max-height: 350px;
   height: 100%;
-  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -104,6 +103,21 @@
   margin: 0;
   text-decoration: none;
   color: white;
+}
+
+.order-card,
+.order-category {
+  background: #2b2a2a;
+  padding: 20px;
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.order-category {
+  font-weight: bold;
 }
 
 body {
