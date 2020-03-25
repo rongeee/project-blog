@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nice Blog</title>
-    <link rel="stylesheet" href="./sass/main.css">
+    <link rel="stylesheet" href="../sass/main.css">
 </head>
 <body>
     <header class="header">
