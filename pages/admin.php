@@ -3,10 +3,10 @@
 ?>
 <div class="order-category">
     <div>ID</div>
-    <div>Datum</div>
-    <div>Namn</div>
-    <div>Titel</div>
-    <div>Image</div>
+    <div>Date</div>
+    <div>Author</div>
+    <div>Title</div>
+    <div>Message</div>
     <div>Admin</div>
 </div>
 <?php
@@ -22,7 +22,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $date = $row['date'];
     $title = $row['title'];
     $author = $row['author'];
-    $image = $row['image'];
+    $msg = $row['message'];
    // $embed = $row['embed'];
    if (empty($image)) {
     // CHANGE IMG URL RETARD
@@ -37,10 +37,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $date; ?></div>
     <div><?= $author; ?></div>
     <div><?= $title; ?></div>
-    <div><?= $image; ?></div>
+    <div><?= $msg; ?></div>
     <div class="admin">
-        <a href='<?= "../db/edit.php?=id=$id"?>'><p class="edit">Edit</p></a>
-        <a href='<?= "../db/delete.php?=id=$id"?>' class="admin-edit"><p class="delete">Delete</p></a>
+        <a href='<?= "../db/edit.php?id=$id"?>'><p class="edit">Edit</p></a>
+        <a href='<?= "../db/delete.php?id=$id"?>' class="admin-edit"><p class="delete">Delete</p></a>
     </div>
 </div>
 <?php
