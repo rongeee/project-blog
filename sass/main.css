@@ -35,6 +35,15 @@
   min-height: 100vh;
 }
 
+.blog-entry__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
