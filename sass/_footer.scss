@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5em;
+  color: white;
+  background-color: darkcyan;
+  align-items: center;
+  margin: 0;
+
+  &__admin-text {
+    margin: 0;
+    text-decoration: none;
+    color: white;
+  }
+}
