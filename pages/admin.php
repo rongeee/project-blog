@@ -49,6 +49,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div class="admin">
         <a class="admin-btn edit" href='<?= "../db/edit.php?id=$id"?>'>Edit</a>
         <a class="admin-btn admin-edit" href='<?= "../db/delete.php?id=$id"?>'>Delete</a>
+        <a class="admin-btn publish" href='<?= "../db/publish.php?id=$id"?>'>Delete</a>
     </div>
 </div>
 <?php
