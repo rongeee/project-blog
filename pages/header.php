@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nice Blog</title>
+    <link rel="stylesheet" href="./sass/main.css">
 </head>
 <body>
-    a
-</body>
-</html>
+    <header class="header">
+        <h1 class="header__logo">Blog</h1>
+        <a href="http://" class="header__admin-link"><p class="header__admin-text">Admin</p></a>
+    </header>
