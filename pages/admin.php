@@ -2,17 +2,14 @@
     require_once './header.php';
 ?>
 <div class="order-category">
-    <div>Ordernr</div>
+    <div>ID</div>
     <div>Datum</div>
     <div>Namn</div>
     <div>Titel</div>
-    <div>Pris</div>
+    <div>Image</div>
 </div>
 <?php
-<<<<<<< HEAD
-=======
   require_once '../db/db.php';
->>>>>>> 8628480ef06aad08540acbbc3991fdbd4068fa24
 
 $sql = "SELECT * FROM proj_posts";
 
@@ -32,8 +29,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     } else {
         $image = "$image";
     };
-}
-?>
+    ?>
 
 <div class="order-card">
     <div><?= $id; ?></div>
@@ -42,3 +38,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $title; ?></div>
     <div><?= $image; ?></div>
 </div>
+<?php
+}
+?>
+
