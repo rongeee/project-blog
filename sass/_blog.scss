@@ -3,3 +3,10 @@
   justify-content: center;
   min-height: 100vh;
 }
+
+.blog-entry {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
