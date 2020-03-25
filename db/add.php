@@ -1,5 +1,6 @@
 <?php
 
+    require_once "../pages/pages_header.php";
     require "db.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars( $_POST['title']);
