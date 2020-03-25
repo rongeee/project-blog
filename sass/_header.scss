@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  color: white;
+  background-color: darkcyan;
+  align-items: center;
+  margin: 0;
+
+  &__logo {
+    margin: 0;
+    text-decoration: none;
+  }
+
+  &__admin-text {
+    margin: 0;
+    text-decoration: none;
+    color: white;
+  }
+}
