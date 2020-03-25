@@ -11,7 +11,16 @@
         $author = $row['author'];
         $date = $row['date'];
         $msg = $row['message'];
-        $msg = str_replace("\n", "<p class='blog-entry__msg'></p>", $msg);
+        $trimmedMsg = '';
+       // $msg = str_replace("\n", "<p class='blog-entry__msg'></p>", $msg);
+        // $msg = str_replace("\n", "</p><p>", $msg) . "</p>";
+        // $msg = str_replace(array('<p>', '</p>', '<br>', '<br />'), '', $msg);
+    
+        foreach (explode("\n", $msg) as $line) {
+            if (trim($line) && !empty($line)) {
+                $trimmedMsg .= '<p>' . $line . '</p>';
+            }
+        }
 
         if (empty($image)) {
             // CHANGE IMG URL RETARD
@@ -27,7 +36,7 @@
             <small class="blog-entry__date"><?= $date; ?></small>
         </div>
         <div class="blog-entry__image-wrap"><img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>"></div>
-        <p class="blog-entry__msg"><?= $msg; ?></p>
+        <p class="blog-entry__msg"><?= $trimmedMsg; ?></p>
         <small class="blog-entry__author"><?= $author; ?></small>
     </div>
 <?php

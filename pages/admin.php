@@ -20,7 +20,7 @@
 <?php
   require_once '../db/db.php';
 
-$sql = "SELECT * FROM proj_posts";
+$sql = "SELECT * FROM proj_posts ORDER BY date DESC";
 
 $stmt = $db -> prepare($sql);
 $stmt->execute();
