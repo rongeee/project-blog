@@ -1,11 +1,11 @@
 <?php
-    require_once './pages_header.php';
+    require_once './../admin_header.php';
 ?>
 
 
 <div class="admin-title">
     <h1 >ADMINISTRATION</h1>
-    <a href="../db/add.php"><button>ADD POST</button></a>
+    <a href="../../db/add.php"><button>ADD POST</button></a>
 </div>
 
 
@@ -18,7 +18,7 @@
     <div>Admin</div>
 </div>
 <?php
-  require_once '../db/db.php';
+  require_once '../../db/db.php';
 
 $sql = "SELECT * FROM proj_posts ORDER BY date DESC";
 
@@ -55,9 +55,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $title; ?></div>
     <div><?= $msg; ?></div>
     <div class="admin">
-        <a class="admin-btn edit" href='<?= "../db/edit.php?id=$id"?>'>Edit</a>
-        <a class="admin-btn admin-edit" href='<?= "../db/delete.php?id=$id"?>'>Delete</a>
-        <a class="admin-btn publish" href='<?= "../db/publish.php?id=$id&published=$isPublished"?>'><?= $publishText; ?> </a>
+        <a class="admin-btn edit" href='<?= "./edit.php?id=$id"?>'>Edit</a>
+        <a class="admin-btn admin-edit" href='<?= "./delete.php?id=$id"?>'>Delete</a>
+        <a class="admin-btn publish" href='<?= "./publish.php?id=$id&published=$isPublished"?>'><?= $publishText; ?> </a>
     </div>
 </div>
 <?php

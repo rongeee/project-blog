@@ -1,6 +1,6 @@
 <?php
-    require_once '../pages/pages_header.php';
-    require_once 'db.php';
+    require_once './../admin_header.php';
+    require_once '../../db/db.php';
 
     if(isset($_GET['id'])){
         $id = htmlspecialchars($_GET['id']);
@@ -12,14 +12,14 @@
         if($stmt->rowCount() > 0){
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
           $title = $row['title'];
-          $message  = $row['message'];
+          $message = $row['message'];
         }else{
-          header('Location:../pages/admin.php');
+          header('Location:./admin.php');
           exit;
         }
       
       } else {
-        header('Location:../pages/admin.php');
+        header('Location:./admin.php');
         exit;
       }
 
@@ -40,7 +40,7 @@
         $stmt->bindParam(':id'  , $id);
       
         $stmt->execute();
-        header('Location: ../pages/admin.php');
+        header('Location: ./admin.php');
         exit;
       }
 ?>
@@ -55,12 +55,7 @@
       value="<?php echo $title ?>"
     >
     <label for="message">Message</label>
-    <textarea 
-      name="message" 
-      placeholder="Nytt meddelande" 
-      value="<?php echo $message ?>"
-    >
-    </textarea>
+    <textarea name="message" placeholder="Nytt meddelande"><?php echo $message ?></textarea>
     <input 
       type="submit" 
       value="Uppdatera"
