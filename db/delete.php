@@ -1,6 +1,5 @@
 <?php
 
-require "../pages/header.php";
 require "db.php";
 
 if(isset($_GET['id'])){

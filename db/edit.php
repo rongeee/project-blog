@@ -1,5 +1,5 @@
 <?php
-    require_once '../pages/header.php';
+    require_once '../pages/pages_header.php';
     require_once 'db.php';
 
     if(isset($_GET['id'])){

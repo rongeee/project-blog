@@ -9,7 +9,10 @@
 
   &__logo {
     margin: 0;
-    text-decoration: none;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 
   &__admin-text {

@@ -12,6 +12,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  background-color: rgb(212, 212, 212);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
   &__header {
     display: flex;
     justify-content: space-between;

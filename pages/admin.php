@@ -1,6 +1,14 @@
 <?php
-    require_once './header.php';
+    require_once './pages_header.php';
 ?>
+
+
+<div class="admin-title">
+    <h1 >ADMINISTRATION</h1>
+    <a href="../db/add.php"><button>ADD POST</button></a>
+</div>
+
+
 <div class="order-category">
     <div>ID</div>
     <div>Date</div>
@@ -39,8 +47,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $title; ?></div>
     <div><?= $msg; ?></div>
     <div class="admin">
-        <a href='<?= "../db/edit.php?id=$id"?>'><p class="edit">Edit</p></a>
-        <a href='<?= "../db/delete.php?id=$id"?>' class="admin-edit"><p class="delete">Delete</p></a>
+        <a class="admin-btn edit" href='<?= "../db/edit.php?id=$id"?>'>Edit</a>
+        <a class="admin-btn admin-edit" href='<?= "../db/delete.php?id=$id"?>'>Delete</a>
     </div>
 </div>
 <?php

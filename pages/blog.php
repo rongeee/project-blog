@@ -1,7 +1,7 @@
 <div class="container">
     <?php
     require_once './db/db.php';
-    $stmt = $db->prepare("SELECT * FROM proj_posts");
+    $stmt = $db->prepare("SELECT * FROM proj_posts WHERE isPublished = 1");
     $stmt->execute();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
