@@ -46,33 +46,25 @@
 ?>
 
 <form action="#" method="POST">
-
-<div class="row">
-
-  <div>
+    <h2>Edit Post</h2>
+    <label for="title">Subject</label>
     <input 
       name="title"
       type="text" 
       placeholder="Ange ny titel" 
       value="<?php echo $title ?>"
     >
-  </div>
-  <div>
-    <input 
-      name="message"
-      type="textarea" 
+    <label for="message">Message</label>
+    <textarea 
+      name="message" 
       placeholder="Nytt meddelande" 
       value="<?php echo $message ?>"
     >
-  </div>
-  <div class="">
+    </textarea>
     <input 
       type="submit" 
       value="Uppdatera"
     >
-  </div>
-
-</div>
 
 <input type="hidden" name="id" value="<?php echo $id; ?>">
 

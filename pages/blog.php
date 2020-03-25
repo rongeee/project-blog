@@ -11,6 +11,7 @@
         $author = $row['author'];
         $date = $row['date'];
         $msg = $row['message'];
+        $msg = str_replace("\n", "<p class='blog-entry__msg'></p>", $msg);
 
         if (empty($image)) {
             // CHANGE IMG URL RETARD
