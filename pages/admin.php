@@ -7,6 +7,7 @@
     <div>Namn</div>
     <div>Titel</div>
     <div>Image</div>
+    <div>Admin</div>
 </div>
 <?php
   require_once '../db/db.php';
@@ -37,6 +38,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $author; ?></div>
     <div><?= $title; ?></div>
     <div><?= $image; ?></div>
+    <div class="admin">
+        <a href="ÄNDRA" class="admin-edit"><p class="edit">Edit</p></a>
+        <a href="ÄNDRA" class="admin-edit"><p class="delete">Delete</p></a>
+    </div>
 </div>
 <?php
 }
