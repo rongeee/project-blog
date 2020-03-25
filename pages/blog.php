@@ -1,6 +1,4 @@
 <div class="container">
-    <h1>pls crate nice blog content here thank u</h1>
-
     <?php
     require_once './db/db.php';
     $stmt = $db->prepare("SELECT * FROM proj_posts");
@@ -27,7 +25,7 @@
             <h2 class="blog-entry__title"><?= $title; ?></h2>
             <small class="blog-entry__date"><?= $date; ?></small>
         </div>
-        <img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>">
+        <div class="blog-entry__image-wrap"><img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>"></div>
         <p class="blog-entry__msg"><?= $msg; ?></p>
         <small class="blog-entry__author"><?= $author; ?></small>
     </div>
