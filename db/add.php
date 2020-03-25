@@ -1,18 +1,17 @@
 <?php
 
     require "db.php";
-    echo $_SERVER['REQUEST_METHOD'];
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars( $_POST['title']);
         $author = htmlspecialchars( $_POST['author']);
         $message = htmlspecialchars( $_POST['message']);
-        
+
         require "upload.php";
-        $file_upload = htmlspecialchars( $_POST['fileToUpload']);
+        $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
         $embed = htmlspecialchars( $_POST['embed']);
 
         
-        $sql = "INSERT INTO proj_posts(title, author, message, image) VALUES (:title, :author, :message, :image, :embed)";
+        $sql = "INSERT INTO proj_posts(title, author, message, image, embed) VALUES (:title, :author, :message, :image, :embed)";
 
         $stmt = $db->prepare($sql);
         $stmt->bindParam(":title", $title);

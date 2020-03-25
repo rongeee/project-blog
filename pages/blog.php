@@ -2,23 +2,23 @@
     <h1>pls crate nice blog content here thank u</h1>
 
     <?php
-    require_once 'db.php';
+    require_once './db/db.php';
     $stmt = $db->prepare("SELECT * FROM proj_posts");
     $stmt->execute();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
         $id= $row['id'];
         $title = $row['title'];
         $image = $row['image'];
         $author = $row['author'];
         $date = $row['date'];
-        $msg = $row['msg'];
+        $msg = $row['message'];
 
         if (empty($image)) {
             // CHANGE IMG URL RETARD
-            $image= "images/no-poster.png";
+            $image= "./db/uploads/1.jpg";
             } else {
-                $image = "images/$image";
+                $image = "./db/uploads/$image";
             };
     ?>
 
@@ -31,5 +31,9 @@
         <p class="blog-entry__msg"><?= $msg; ?></p>
         <small class="blog-entry__author"><?= $author; ?></small>
     </div>
+<?php
 
+    endwhile;
+
+?>
 </div>
