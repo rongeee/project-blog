@@ -9,7 +9,7 @@
 
         require "upload.php";
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
-        $embed = htmlspecialchars( $_POST['embed']);
+        $embed = $_POST['embed'];
 
         
         $sql = "INSERT INTO proj_posts(title, author, message, image, embed) VALUES (:title, :author, :message, :image, :embed)";

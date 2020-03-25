@@ -88,6 +88,11 @@
      object-fit: contain;
 }
 
+iframe {
+  width: 100%;
+  max-height: 500px;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;

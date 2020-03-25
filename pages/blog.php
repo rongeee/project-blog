@@ -11,6 +11,7 @@
         $author = $row['author'];
         $date = $row['date'];
         $msg = $row['message'];
+        $embed = $row['embed'];
         $trimmedMsg = '';
        // $msg = str_replace("\n", "<p class='blog-entry__msg'></p>", $msg);
         // $msg = str_replace("\n", "</p><p>", $msg) . "</p>";
@@ -37,6 +38,13 @@
         </div>
         <div class="blog-entry__image-wrap"><img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>"></div>
         <p class="blog-entry__msg"><?= $trimmedMsg; ?></p>
+        <div class="embed-wrap">
+            <?php 
+                if (!empty($embed)){
+                    echo $embed;
+                }
+            ?>
+        </div>
         <small class="blog-entry__author"><?= $author; ?></small>
     </div>
 <?php
