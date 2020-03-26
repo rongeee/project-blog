@@ -1,7 +1,7 @@
 <?php
 
-    require_once "../pages/pages_header.php";
-    require "db.php";
+    require_once "../header.php";
+    require_once "./db.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars( $_POST['title']);
         $author = htmlspecialchars( $_POST['author']);
@@ -12,7 +12,7 @@
                 $trimmedMsg .= '<p class="blog-entry__text">' . $line . '</p>';
             }
 
-        require "upload.php";
+        require "./upload.php";
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
         $embed = $_POST['embed'];
 
@@ -57,3 +57,7 @@
     class="form-control my-2 btn btn-outline-success"
     value="Publish">
 </form>
+
+<?php
+    require_once '../footer.php'
+?>

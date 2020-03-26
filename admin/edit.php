@@ -1,6 +1,6 @@
 <?php
-    require_once './../admin_header.php';
-    require_once '../../db/db.php';
+    require_once '../header.php';
+    require_once '../db/db.php';
 
     if(isset($_GET['id'])){
         $id = htmlspecialchars($_GET['id']);
@@ -64,3 +64,6 @@
 <input type="hidden" name="id" value="<?php echo $id; ?>">
 
 </form>
+<?php
+  require_once '../footer.php'
+?>
