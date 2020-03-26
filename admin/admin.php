@@ -34,13 +34,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     else {
         $publishText = "Publish";
     }
-   // $embed = $row['embed'];
-   if (empty($image)) {
-    // CHANGE IMG URL RETARD
-    $image= "1.jpg";
-    } else {
-        $image = "$image";
-    };
     ?>
 
 <div class="order-card">
