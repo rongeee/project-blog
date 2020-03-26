@@ -12,7 +12,10 @@
         if ($stmt->rowCount() > 0){
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
           $title = $row['title'];
+          $author = $row['author'];
           $message = $row['message'];
+          $image = $row['image'];
+          $embed = $row['embed'];
         } else {
           header('Location:../admin');
           exit;
@@ -36,7 +39,7 @@
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
       
         $sql = "UPDATE proj_posts
-                SET title = :title, message = :message , author = :author, embed = :embed, image = :image
+                SET title = :title, message = :message, author = :author, embed = :embed, image = :image
                 WHERE id = :id";
       
         $stmt = $db->prepare($sql);
@@ -48,9 +51,9 @@
         $stmt->bindParam(':id'  , $id);
         
         if ($image != $file_upload && isset($file_upload)) {
-          $stmt->bindParam(':image' , $file_upload);
+          $stmt->bindParam(':image', $file_upload);
         } else {
-          $stmt->bindParam(':image' , $image);
+          $stmt->bindParam(':image', $image);
         }
         
         
@@ -82,7 +85,7 @@
     <textarea name="message" placeholder="Nytt meddelande" requried><?php echo $message ?></textarea>
 
     <label for="image">Image</label>
-    <input type="file" name="fileToUpload" required>
+    <input type="file" name="fileToUpload">
 
     <label for="author">Embed Video/Map</label>
     <input 
