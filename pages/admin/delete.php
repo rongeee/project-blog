@@ -12,6 +12,6 @@ if(isset($_GET['id'])){
   $stmt->execute();
 }
 
-header('Location:./admin.php');
+header('Location:../admin');
 
 ?>
