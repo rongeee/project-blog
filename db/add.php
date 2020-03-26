@@ -23,7 +23,7 @@
 
         $stmt->execute();
 
-        echo 'Success!';
+        header('Location:../index.php');
     }
 
 
@@ -33,16 +33,19 @@
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
     <h2>Create Post</h4>
     <label for="title">Subject</label>
-    <input type="text" name="title">
+    <input type="text" name="title" required>
+
     <label for="author">Author</label>
-    <input type="text" name="author">
+    <input type="text" name="author" required>
+
     <label for="message">Message</label>
-    <textarea type="text" name="message"></textarea>
+    <textarea type="text" name="message" required></textarea>
+
     <label for="image">Image</label>
     <input type="file" name="fileToUpload" required>
+
     <label for="embed">Embed Video/Map</label>
     <input type="text" name="embed">
-    <input type="submit"
-    class="form-control my-2 btn btn-outline-success"
-    value="Publish">
+
+    <input type="submit" value="Publish">
 </form>
