@@ -1,6 +1,6 @@
 <div class="admin-title">
     <h1 >ADMINISTRATION</h1>
-    <a href="/db/add.php"><button>ADD POST</button></a>
+    <a href="db/add.php"><button>ADD POST</button></a>
 </div>
 
 
