@@ -8,35 +8,25 @@
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id' , $id );
         $stmt->execute();
-      
-        if($stmt->rowCount() > 0){
-          $row = $stmt->fetch(PDO::FETCH_ASSOC);
-          $title = $row['title'];
-          $message = $row['message'];
-        }else{
-          header('Location:../admin');
-          exit;
-        }
-      
-      } else {
-        header('Location:../admin');
-        exit;
-      }
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $title = htmlentities($_POST['title']);
         $message  = htmlentities($_POST['message']);
+        $author = htmlentities($_POST['author']);
+        $embed = htmlentities($_POST['embed']);
         $id   = htmlentities($_POST['id']);
       
         $sql = "UPDATE proj_posts
-                SET title = :title, message = :message 
+                SET title = :title, message = :message , author = :author, embed = :embed
                 WHERE id = :id";
       
         $stmt = $db->prepare($sql);
       
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':message' , $message);
+        $stmt->bindParam(':author' , $author);
+        $stmt->bindParam(':embed' , $embed);
         $stmt->bindParam(':id'  , $id);
       
         $stmt->execute();
@@ -51,15 +41,34 @@
     <input 
       name="title"
       type="text" 
-      placeholder="Ange ny titel" 
       value="<?php echo $title ?>"
+      required
     >
+
+    <label for="author">Author</label>
+    <input 
+      name="author"
+      type="text" 
+      value="<?php echo $author ?>"
+      required
+    >
+
+
     <label for="message">Message</label>
-    <textarea name="message" placeholder="Nytt meddelande"><?php echo $message ?></textarea>
+    <textarea name="message" placeholder="Nytt meddelande" requried><?php echo $message ?></textarea>
     <input 
       type="submit" 
       value="Uppdatera"
     >
+
+    <label for="author">Embed Video/Map</label>
+    <input 
+      name="embed"
+      type="text" 
+      value="<?php echo $embed ?>"
+      required
+    >
+
 
 <input type="hidden" name="id" value="<?php echo $id; ?>">
 
