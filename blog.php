@@ -19,13 +19,9 @@
                 $trimmedMsg .= '<p class="blog-entry__text">' . $line . '</p>';
             }
         }
-
-        if (empty($image)) {
-            // CHANGE IMG URL RETARD
-            $image= "./db/uploads/1.jpg";
-            } else {
-                $image = "./db/uploads/$image";
-            };
+        if (!empty($image)) {
+            $image = "./db/uploads/$image";
+        };
     ?>
 
     <div class="blog-entry">

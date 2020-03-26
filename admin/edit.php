@@ -2,12 +2,26 @@
     require_once '../header.php';
     require_once '../db/db.php';
 
-    if(isset($_GET['id'])){
+    if (isset($_GET['id'])){
         $id = htmlspecialchars($_GET['id']);
         $sql = "SELECT * FROM proj_posts WHERE id = :id";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id' , $id );
         $stmt->execute();
+
+        if ($stmt->rowCount() > 0){
+          $row = $stmt->fetch(PDO::FETCH_ASSOC);
+          $title = $row['title'];
+          $message = $row['message'];
+        } else {
+          header('Location:../admin');
+          exit;
+        }
+      
+      } else {
+        header('Location:../admin');
+        exit;
+      }
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -74,5 +88,5 @@
 
 </form>
 <?php
-  require_once '../footer.php'
+  require_once '../footer.php';
 ?>
