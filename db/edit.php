@@ -28,7 +28,7 @@
         $embed = $_POST['embed'];
         $id   = htmlentities($_POST['id']);
 
-        require "../db/upload.php";
+        require "./db/upload.php";
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
       
         $sql = "UPDATE proj_posts
