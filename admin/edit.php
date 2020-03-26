@@ -67,13 +67,8 @@
       required
     >
 
-
     <label for="message">Message</label>
     <textarea name="message" placeholder="Nytt meddelande" requried><?php echo $message ?></textarea>
-    <input 
-      type="submit" 
-      value="Uppdatera"
-    >
 
     <label for="author">Embed Video/Map</label>
     <input 
@@ -81,6 +76,11 @@
       type="text" 
       value="<?php echo $embed ?>"
       required
+    >
+
+    <input 
+      type="submit" 
+      value="Edit Post"
     >
 
 
