@@ -23,6 +23,6 @@ if(isset($_GET['id'])){
 
 }
 
-header('Location:./admin.php');
+header('Location:../admin');
 
 ?>

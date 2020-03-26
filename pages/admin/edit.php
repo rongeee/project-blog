@@ -14,12 +14,12 @@
           $title = $row['title'];
           $message = $row['message'];
         }else{
-          header('Location:./admin.php');
+          header('Location:../admin');
           exit;
         }
       
       } else {
-        header('Location:./admin.php');
+        header('Location:../admin');
         exit;
       }
 
@@ -40,7 +40,7 @@
         $stmt->bindParam(':id'  , $id);
       
         $stmt->execute();
-        header('Location: ./admin.php');
+        header('Location: ../admin');
         exit;
       }
 ?>
