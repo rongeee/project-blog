@@ -16,14 +16,7 @@
           $message = $row['message'];
           $image = $row['image'];
           $embed = $row['embed'];
-        } else {
-          header('Location:../admin');
-          exit;
         }
-      
-      } else {
-        header('Location:../admin');
-        exit;
       }
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -57,7 +50,6 @@
         }
 
         $stmt->execute();
-        
         header('Location: ../admin');
         exit;
       }
