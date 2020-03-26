@@ -17,12 +17,12 @@
           $image = $row['image'];
           $embed = $row['embed'];
         } else {
-          // header('Location:../admin');
+          header('Location:../admin');
           exit;
         }
       
       } else {
-        // header('Location:../admin');
+        header('Location:../admin');
         exit;
       }
 
@@ -57,7 +57,7 @@
         }
 
         $stmt->execute();
-        // header('Location: ../admin');
+        header('Location: ../admin');
         exit;
       }
 ?>
