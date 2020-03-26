@@ -1,16 +1,11 @@
 <?php
 
     require_once "../header.php";
-    require_once "./db/db.php";
+    require_once "./db.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars( $_POST['title']);
         $author = htmlspecialchars( $_POST['author']);
         $message = htmlspecialchars( $_POST['message']);
-        $trimmedMsg = '';
-        foreach (explode("\n", $message) as $line) {
-            if (trim($line) && !empty($line)) {
-                $trimmedMsg .= '<p class="blog-entry__text">' . $line . '</p>';
-            }
 
         require "./upload.php";
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
@@ -22,17 +17,9 @@
         $stmt = $db->prepare($sql);
         $stmt->bindParam(":title", $title);
         $stmt->bindParam(":author", $author);
-        $stmt->bindParam(":message", $trimmedMsg);
+        $stmt->bindParam(":message", $message);
         $stmt->bindParam(":image", $file_upload);
         $stmt->bindParam(":embed", $embed);
-
-        $trimmedMsg = '';
-        foreach (explode("\n", $msg) as $line) {
-            if (trim($line) && !empty($line)) {
-                $trimmedMsg .= '<p class="blog-entry__text">' . $line . '</p>';
-            }
-        }
-
 
         $stmt->execute();
     }
@@ -57,7 +44,3 @@
     class="form-control my-2 btn btn-outline-success"
     value="Publish">
 </form>
-
-<?php
-    require_once '../footer.php'
-?>
