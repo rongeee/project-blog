@@ -41,6 +41,4 @@
             echo "Sorry, there was an error uploading your file.";
         }
     }
-
-    require_once '../footer.php'
 ?>
