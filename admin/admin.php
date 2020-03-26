@@ -1,6 +1,6 @@
 <div class="admin-title">
     <h1 >ADMINISTRATION</h1>
-    <a href="db/add.php"><button>ADD POST</button></a>
+    <a href="db/add.php"><button class="admin-add-btn">NEW POST</button></a>
 </div>
 
 
@@ -41,7 +41,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $date; ?></div>
     <div><?= $author; ?></div>
     <div><?= $title; ?></div>
-    <div><?= $msg; ?></div>
+    <div class="admin-msg"><?= $msg; ?></div>
     <div class="admin">
         <a class="admin-btn edit" href='<?= "admin/edit.php?id=$id"?>'>Edit</a>
         <a class="admin-btn admin-edit" href='<?= "admin/delete.php?id=$id"?>'>Delete</a>

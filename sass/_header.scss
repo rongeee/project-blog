@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding: 1.5em;
   color: white;
-  background-color: darkcyan;
+  background: linear-gradient(-90deg, #e1f2fb, rgb(29, 28, 28) 150%);
   align-items: center;
   margin: 0;
 
@@ -11,13 +11,20 @@
     margin: 0;
     a {
       text-decoration: none;
-      color: white;
+      color: black;
+      background: #e1f2fb;
+      padding: 0.75rem 2rem;
+      mix-blend-mode: screen;
     }
   }
 
-  &__admin-text {
+  &__admin-link {
     margin: 0;
     text-decoration: none;
-    color: white;
+    color: rgb(29, 28, 28);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

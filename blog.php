@@ -27,7 +27,6 @@
     <div class="blog-entry">
         <div class="blog-entry__header">
             <h2 class="blog-entry__title"><?= $title; ?></h2>
-            <small class="blog-entry__date"><?= $date; ?></small>
         </div>
         <div class="blog-entry__image-wrap"><img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>"></div>
         <?= $trimmedMsg ?>
@@ -38,7 +37,11 @@
                 }
             ?>
         </div>
-        <small class="blog-entry__author"><?= $author; ?></small>
+        <div class="blog-entry__author">
+            <small>Published by - <strong><?= $author; ?></strong></small>
+            <small class="blog-entry__date"><?= $date; ?></small>
+        </div>
+
     </div>
 <?php
 
