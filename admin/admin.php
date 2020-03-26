@@ -50,9 +50,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <div><?= $title; ?></div>
     <div><?= $msg; ?></div>
     <div class="admin">
-        <a class="admin-btn edit" href='<?= "./edit.php?id=$id"?>'>Edit</a>
-        <a class="admin-btn admin-edit" href='<?= "./delete.php?id=$id"?>'>Delete</a>
-        <a class="admin-btn publish" href='<?= "./publish.php?id=$id&published=$isPublished"?>'><?= $publishText; ?> </a>
+        <a class="admin-btn edit" href='<?= "admin/edit.php?id=$id"?>'>Edit</a>
+        <a class="admin-btn admin-edit" href='<?= "admin/delete.php?id=$id"?>'>Delete</a>
+        <a class="admin-btn publish" href='<?= "admin/publish.php?id=$id&published=$isPublished"?>'><?= $publishText; ?> </a>
     </div>
 </div>
 <?php

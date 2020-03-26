@@ -1,7 +1,7 @@
 <?php
 
     require_once "../header.php";
-    require_once "../db/db.php";
+    require_once "./db/db.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars( $_POST['title']);
         $author = htmlspecialchars( $_POST['author']);
