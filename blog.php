@@ -1,6 +1,6 @@
 <div class="container">
     <?php
-    require_once './db/db.php';
+    require_once '/db/db.php';
     $stmt = $db->prepare("SELECT * FROM proj_posts WHERE isPublished = 1 ORDER BY date DESC");
     $stmt->execute();
 

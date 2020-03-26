@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../db/db.php';
+require_once '/db/db.php';
 
 if(isset($_GET['id'])){
 
@@ -13,5 +13,4 @@ if(isset($_GET['id'])){
 }
 
 header('Location:../admin');
-
 ?>

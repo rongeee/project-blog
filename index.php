@@ -1,5 +1,5 @@
 <?php
-    require_once './pages/header.php';
-    require_once './pages/blog.php';
-    require_once './pages/footer.php';
+    require_once '/header.php';
+    require_once '/blog.php';
+    require_once '/footer.php';
 ?>

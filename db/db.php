@@ -13,3 +13,7 @@
     echo $e-> getMessage();
     }
 ?>
+
+<?php
+    require_once '/footer.php'
+?>
