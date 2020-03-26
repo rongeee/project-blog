@@ -22,6 +22,8 @@
         $stmt->bindParam(":embed", $embed);
 
         $stmt->execute();
+
+        echo 'Success!';
     }
 
 
