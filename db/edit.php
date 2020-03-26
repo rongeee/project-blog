@@ -1,6 +1,6 @@
 <?php
     require_once '../header.php';
-    require_once '../db/db.php';
+    require_once './db.php';
 
     if (isset($_GET['id'])){
         $id = htmlspecialchars($_GET['id']);
@@ -31,8 +31,8 @@
         $title = htmlentities($_POST['title']);
         $message  = htmlentities($_POST['message']);
         $author = htmlentities($_POST['author']);
-        $image = htmlentities($_POST['image']);
-        $embed = htmlentities($_POST['embed']);
+        $image = $_POST['image'];
+        $embed = $_POST['embed'];
         $id   = htmlentities($_POST['id']);
 
         require "../db/upload.php";
@@ -55,8 +55,7 @@
         } else {
           $stmt->bindParam(':image', $image);
         }
-        
-        
+
         $stmt->execute();
         header('Location: ../admin');
         exit;
@@ -92,7 +91,6 @@
       name="embed"
       type="text" 
       value="<?php echo $embed ?>"
-      required
     >
 
     <input 
