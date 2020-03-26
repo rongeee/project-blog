@@ -17,12 +17,12 @@
           $image = $row['image'];
           $embed = $row['embed'];
         } else {
-          header('Location:../admin');
+          // header('Location:../admin');
           exit;
         }
       
       } else {
-        header('Location:../admin');
+        // header('Location:../admin');
         exit;
       }
 
@@ -57,12 +57,12 @@
         }
 
         $stmt->execute();
-        header('Location: ../admin');
+        // header('Location: ../admin');
         exit;
       }
 ?>
 
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
     <h2>Edit Post</h2>
     <label for="title">Subject</label>
     <input 
