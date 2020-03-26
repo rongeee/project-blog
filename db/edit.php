@@ -55,7 +55,7 @@
       }
 ?>
 
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=$id";?>" method="POST" enctype="multipart/form-data">
     <h2>Edit Post</h2>
     <label for="title">Subject</label>
     <input 
