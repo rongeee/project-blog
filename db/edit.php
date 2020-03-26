@@ -57,6 +57,7 @@
         }
 
         $stmt->execute();
+        
         header('Location: ../admin');
         exit;
       }
