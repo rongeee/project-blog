@@ -62,7 +62,7 @@
       }
 ?>
 
-<form action="#" method="POST">
+<form action="#" method="POST" enctype="multipart/form-data">
     <h2>Edit Post</h2>
     <label for="title">Subject</label>
     <input 
