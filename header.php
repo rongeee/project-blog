@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <base href="http://samuelmartensson.se/cms/"> -->
+    <base href="http://samuelmartensson.se/cms/">
     <title>CMS Slutprojekt</title>
-    <link rel="stylesheet" href="/project/project-blog/sass/main.css">
+    <link rel="stylesheet" href="/sass/main.css">
 </head>
 <body>
     <header class="header">
