@@ -1,0 +1,35 @@
+.form-add {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  margin-top: 2rem;
+
+  label {
+    margin: 0.5rem 0;
+  }
+  input,
+  textarea {
+    border: 2px solid rgba(32, 32, 32, 0.63);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+  }
+  input[type='submit'] {
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    padding: 0.75rem 3rem;
+    align-self: center;
+    background: linear-gradient(45deg, #77dd77, #6ac76a);
+
+    &:hover {
+      background: linear-gradient(45deg, #6ed66e, #5bb65b);
+    }
+  }
+}

@@ -24,17 +24,23 @@
         $title = htmlentities($_POST['title']);
         $message  = htmlentities($_POST['message']);
         $author = htmlentities($_POST['author']);
-        $image = $_POST['image'];
         $embed = $_POST['embed'];
         $id   = htmlentities($_POST['id']);
 
         require "./upload.php";
         $file_upload = htmlspecialchars( $_FILES['fileToUpload']['name'] );
-      
-        $sql = "UPDATE proj_posts
-                SET title = :title, message = :message, author = :author, embed = :embed, image = :image
-                WHERE id = :id";
-      
+
+        if (!empty($file_upload)) {
+          $sql = "UPDATE proj_posts
+          SET title = :title, message = :message, author = :author, embed = :embed, image = :image
+          WHERE id = :id";
+        }
+        else {
+          $sql = "UPDATE proj_posts
+          SET title = :title, message = :message, author = :author, embed = :embed
+          WHERE id = :id";
+        }
+
         $stmt = $db->prepare($sql);
       
         $stmt->bindParam(':title', $title);
@@ -42,11 +48,9 @@
         $stmt->bindParam(':author' , $author);
         $stmt->bindParam(':embed' , $embed);
         $stmt->bindParam(':id'  , $id);
-        
-        if ($image != $file_upload && isset($file_upload)) {
+
+        if (!empty($file_upload)) {
           $stmt->bindParam(':image', $file_upload);
-        } else {
-          $stmt->bindParam(':image', $image);
         }
 
         $stmt->execute();
@@ -55,7 +59,7 @@
       }
 ?>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=$id";?>" method="POST" enctype="multipart/form-data">
+<form class="form-add" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=$id";?>" method="POST" enctype="multipart/form-data">
     <h2>Edit Post</h2>
     <label for="title">Subject</label>
     <input 
@@ -83,7 +87,7 @@
     <input 
       name="embed"
       type="text" 
-      value="<?php echo $embed ?>"
+      value="<?php echo htmlspecialchars( $embed ) ?>"
     >
 
     <input 
@@ -97,4 +101,5 @@
 </form>
 <?php
   require_once '../footer.php';
+
 ?>

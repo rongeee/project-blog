@@ -30,7 +30,7 @@
         </div>
         <div class="blog-entry__image-wrap"><img class="blog-entry__image" src="<?= $image; ?>" alt="<?= $title; ?>"></div>
         <?= $trimmedMsg ?>
-        <div class="embed-wrap">
+        <div class="embed-wrap <?php echo !empty($embed) ? 'aspect-ratio' : NULL ?>">
             <?php 
                 if (!empty($embed)){
                     echo $embed;

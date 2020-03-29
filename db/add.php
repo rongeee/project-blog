@@ -30,7 +30,7 @@
 ?>
 
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
+<form class="form-add" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
     <h2>Create Post</h4>
     <label for="title">Subject</label>
     <input type="text" name="title" required>
@@ -49,3 +49,7 @@
 
     <input type="submit" value="Publish">
 </form>
+
+<?php 
+    require_once "../footer.php";
+?>

@@ -119,10 +119,21 @@
   background-color: rgba(255, 255, 255, 0.829);
 }
 
-iframe {
+.aspect-ratio {
+  position: relative;
   width: 100%;
-  height: 70%;
-  max-height: 500px;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* The height of the item will now be 56.25% of the width. */
+}
+
+/* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .footer {
@@ -136,7 +147,7 @@ iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 5.5em;
+  padding: 2.5em;
   background-color: #e1f2fb;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -148,7 +159,7 @@ iframe {
 .footer__admin-text {
   margin: 0;
   text-decoration: none;
-  color: #ce8b98;
+  color: #000000;
 }
 
 .order-card,
@@ -231,6 +242,51 @@ iframe {
   color: white;
   background: #141414;
   padding: 1.5rem;
+}
+
+.form-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  margin-top: 2rem;
+}
+
+.form-add label {
+  margin: 0.5rem 0;
+}
+
+.form-add input,
+.form-add textarea {
+  border: 2px solid rgba(32, 32, 32, 0.63);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.form-add input[type='submit'] {
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  padding: 0.75rem 3rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: linear-gradient(45deg, #77dd77, #6ac76a);
+}
+
+.form-add input[type='submit']:hover {
+  background: linear-gradient(45deg, #6ed66e, #5bb65b);
 }
 
 body {
