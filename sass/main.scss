@@ -8,10 +8,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(rgba(59, 52, 52, 0.911), rgba(90, 93, 139, 0.959)),
-    url('https://source.unsplash.com/random/1920x1080/?nature');
-  background-attachment: fixed;
   min-height: 100vh;
+  background: #dae0e6;
   display: flex;
   flex-direction: column;
 }

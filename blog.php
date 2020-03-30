@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="blog-entries">
     <?php
     require_once './db/db.php';
     $stmt = $db->prepare("SELECT * FROM proj_posts WHERE isPublished = 1 ORDER BY date DESC");
@@ -49,3 +50,15 @@
 
 ?>
 </div>
+
+    <aside>
+        <div class="info">This is a side bar with some links for a sense of authenticity</div>
+        <div class="link-wrap">
+            <a href="https://samuelmartensson.se/portfolio/" target="_blank">Main website</a>
+            <a href="http://samuelmartensson.se/webbshop/" target="_blank">Our shop</a>
+            <a href="http://samuelmartensson.se/build/boards/1585138892775" target="_blank">Project plan</a>
+        </div>
+    </aside>
+
+</div>
+
